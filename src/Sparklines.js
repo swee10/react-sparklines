@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import SparklinesText from './SparklinesText';
 import SparklinesLine from './SparklinesLine';
 import SparklinesCurve from './SparklinesCurve';
@@ -35,12 +35,12 @@ class Sparklines extends PureComponent {
         margin: 2
     };
 
-    constructor (props) {
+    constructor(props) {
         super(props);
     }
 
     render() {
-        const {  data, limit, width, height, svgWidth, svgHeight, preserveAspectRatio, margin, style, max, min} = this.props;
+        const { data, limit, width, height, svgWidth, svgHeight, preserveAspectRatio, margin, style, max, min } = this.props;
 
         if (data.length === 0) return null;
 
@@ -53,7 +53,7 @@ class Sparklines extends PureComponent {
         return (
             <svg {...svgOpts}>
                 {
-                    React.Children.map(this.props.children, function(child) {
+                    React.Children.map(this.props.children, function (child) {
                         return React.cloneElement(child, { data, points, width, height, margin });
                     })
                 }
@@ -62,4 +62,4 @@ class Sparklines extends PureComponent {
     }
 }
 
-export { Sparklines, SparklinesLine, SparklinesCurve, SparklinesBars, SparklinesSpots, SparklinesReferenceLine, SparklinesNormalBand, SparklinesText }
+export { Sparklines, SparklinesLine, SparklinesCurve, SparklinesBars, SparklinesSpots, SparklinesReferenceLine, SparklinesNormalBand, SparklinesText, dataToPoints }

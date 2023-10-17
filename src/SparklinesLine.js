@@ -9,7 +9,7 @@ export default class SparklinesLine extends React.Component {
 
   static defaultProps = {
     style: {},
-    onMouseMove: () => {},
+    onMouseMove: () => { },
   };
 
   render() {
@@ -58,7 +58,7 @@ export default class SparklinesLine extends React.Component {
     });
 
     return (
-      <g>
+      <g style={{ height: 200 }}>
         {tooltips}
         <polyline points={fillPoints.join(' ')} style={fillStyle} />
         <polyline points={linePoints.join(' ')} style={lineStyle} />
